@@ -8,8 +8,8 @@ spring:
         version: 0.0.1
 #        stdio: true
         enabled: true
-        type: async
+        type: sync
 
 logging:
   file:
-    name: /Users/a80128103/workspace/ollama/spring-ai-examples/model-context-protocol/weather/starter-webflux-server/target/starter-stdio-server.log
+    name: ./target/server.log
