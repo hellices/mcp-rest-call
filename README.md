@@ -1,5 +1,8 @@
 # Spring AI MCP OpenAPI Server Sample
 
+[![Gradle Build and Publish](https://github.com/spring-projects/spring-ai-examples/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/spring-projects/spring-ai-examples/actions/workflows/gradle-build.yml)
+[![GitHub Actions Artifacts](https://img.shields.io/badge/GitHub%20Actions-Artifacts-blue?logo=github)](https://github.com/spring-projects/spring-ai-examples/actions)
+
 This project is a Spring AI Model Context Protocol (MCP) server that provides tools for working with OpenAPI specifications. It enables AI models to interact with REST APIs by providing the following capabilities:
 
 1. **OpenAPI Specification Collection**: Fetches and parses OpenAPI specifications from domains
@@ -113,8 +116,51 @@ Makes a POST request to a URI.
 
 ### Using Java JAR
 
+The project is built and published as a JAR artifact through GitHub Actions. You can download the JAR from the GitHub Actions artifacts or build it locally using Gradle.
+
+To run the JAR:
+
 ```bash
 java -jar build/libs/mcp-weather-starter-webflux-server-0.0.1-SNAPSHOT.jar
+```
+
+### Building Locally
+
+To build the project locally:
+
+```bash
+./gradlew clean build
+```
+
+This will create a JAR file in the `build/libs` directory that you can run with the Java command above.
+
+### Using Docker
+
+The project is now built and published as a Docker image to GitHub Container Registry (GHCR) through GitHub Actions.
+
+#### Pulling the published image
+
+```bash
+# Pull the Docker image from GHCR
+docker pull ghcr.io/spring-projects/spring-ai-examples/mcp-weather-starter-webflux-server:latest
+
+# Run the Docker container
+docker run -p 8080:8080 ghcr.io/spring-projects/spring-ai-examples/mcp-weather-starter-webflux-server:latest
+```
+
+#### Building locally
+
+You can also build the Docker image locally:
+
+```bash
+# Build the application first
+./gradlew build
+
+# Build the Docker image
+docker build -t mcp-weather-starter-webflux-server .
+
+# Run the Docker container
+docker run -p 8080:8080 mcp-weather-starter-webflux-server
 ```
 
 ## Additional Resources
