@@ -18,7 +18,6 @@ This project is a Spring AI Model Context Protocol (MCP) server that provides to
 - Built with Spring Boot and Spring AI
 - Implements the Model Context Protocol (MCP)
 - Provides tools for AI models to discover and interact with REST APIs
-- Uses reactive programming with Spring WebFlux
 
 ## Project Structure
 
