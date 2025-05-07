@@ -28,11 +28,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Debug file structure
-        run: |
-          echo "Current working directory: $(pwd)"
-          ls -R
-
       - name: Build with Gradle
         run: ./gradlew build
 
