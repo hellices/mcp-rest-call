@@ -19,6 +19,62 @@ This project is a Spring AI Model Context Protocol (MCP) server that provides to
 - Implements the Model Context Protocol (MCP)
 - Provides tools for AI models to discover and interact with REST APIs
 
+---
+
+## 🚀 Quick Start
+
+### 🔧 Run via JAR
+
+```bash
+./gradlew build
+java -jar build/libs/mcp-rest-call-*.jar
+```
+
+### 🐳 Run via Docker
+
+```bash
+docker pull ghcr.io/hellices/mcp-rest-call:latest
+docker run -p 8080:8080 ghcr.io/hellices/mcp-rest-call:latest
+```
+
+> Or build and run it locally:
+> ```bash
+> ./gradlew build
+> docker build -t mcp-rest-call .
+> docker run -p 8080:8080 mcp-rest-call
+> ```
+
+---
+
+## 🧠 Connect with VS Code (Cline + MCP)
+
+1. Install the [Cline extension for VS Code](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev)
+2. Open the Cline MCP settings:  
+   Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux) → `Open Cline MCP settings`
+3. Add your MCP server config:
+   ```json
+   {
+      "mcpServers": {
+         "openapi-collector-server": {
+         "url": "http://127.0.0.1:8080/sse",
+         "disabled": false,
+         "autoApprove": [
+            "analyzeEndpoint",
+            "getApiSpecification",
+            "makeGetRequest",
+            "makePostRequest",
+            "makeRequest",
+            "analyzeAndCall"
+         ],
+         "transportType": "sse"
+         }
+      }
+   }
+   ```
+4. Use Cline commands such as `analyzeEndpoint` or `makeRequest` directly in VS Code
+
+ 
+
 ## Project Structure
 
 The server is organized into three main services:
@@ -106,65 +162,6 @@ Makes a POST request to a URI.
 
 **Returns:** The response from the API call.
 
-
-
-## Building and Running
-
-### Using Gradle
-
-```bash
-./gradlew build
-./gradlew bootRun
-```
-
-### Using Java JAR
-
-The project is built and published as a JAR artifact through GitHub Actions. You can download the JAR from the GitHub Actions artifacts or build it locally using Gradle.
-
-To run the JAR:
-
-```bash
-java -jar build/libs/mcp-rest-call-0.0.1-SNAPSHOT.jar
-```
-
-### Building Locally
-
-To build the project locally:
-
-```bash
-./gradlew clean build
-```
-
-This will create a JAR file in the `build/libs` directory that you can run with the Java command above.
-
-### Using Docker
-
-The project is now built and published as a Docker image to GitHub Container Registry (GHCR) through GitHub Actions.
-
-#### Pulling the published image
-
-```bash
-# Pull the Docker image from GHCR
-docker pull ghcr.io/hellices/mcp-rest-call:latest
-
-# Run the Docker container
-docker run -p 8080:8080 ghcr.io/hellices/mcp-rest-call:latest
-```
-
-#### Building locally
-
-You can also build the Docker image locally:
-
-```bash
-# Build the application first
-./gradlew build
-
-# Build the Docker image
-docker build -t mcp-rest-call .
-
-# Run the Docker container
-docker run -p 8080:8080 mcp-rest-call
-```
 
 ## Additional Resources
 
