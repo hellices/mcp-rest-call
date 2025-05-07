@@ -7,7 +7,7 @@
 [![Java](https://img.shields.io/badge/Java-21-blue.svg?logo=java)](https://openjdk.org/projects/jdk/21/)
 [![Gradle](https://img.shields.io/badge/Gradle-8.7-blue?logo=gradle)](https://gradle.org/)
 [![Docker](https://img.shields.io/badge/built%20with-Docker-blue?logo=docker)](https://hub.docker.com/)
-[![License](https://img.shields.io/github/license/hellices/mcp-rest-call)](./LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 This project is a Spring AI Model Context Protocol (MCP) server that provides tools for working with OpenAPI specifications. It enables AI models to interact with REST APIs by providing the following capabilities:
 
