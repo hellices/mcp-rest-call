@@ -2,7 +2,7 @@
 
 # mcp-rest-call
 
-[![Build](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-publish.yml)
+[![Build](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-push.yml)
 [![GitHub Actions Artifacts](https://img.shields.io/badge/GitHub%20Actions-Artifacts-blue?logo=github)](https://github.com/hellices/mcp-rest-call/actions)
 [![Java](https://img.shields.io/badge/Java-21-blue.svg?logo=java)](https://openjdk.org/projects/jdk/21/)
 [![Gradle](https://img.shields.io/badge/Gradle-8.7-blue?logo=gradle)](https://gradle.org/)
