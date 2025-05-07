@@ -11,15 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+
+    defaults:
+      run:
+        working-directory: mcp-rest-call
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Java
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
@@ -27,18 +27,20 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      # Grant execute permission for gradlew
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      # Build with Gradle
+      - name: Debug file structure
+        run: |
+          echo "Current working directory: $(pwd)"
+          ls -R
+
       - name: Build with Gradle
         run: ./gradlew build
 
-      # Upload JAR as artifact
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: application-jar
-          path: build/libs/*.jar
+          path: mcp-rest-call/build/libs/*.jar
           if-no-files-found: error
