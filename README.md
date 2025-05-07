@@ -1,5 +1,3 @@
-# Spring AI MCP OpenAPI Server Sample
-
 # mcp-rest-call
 
 [![Build](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-push.yml)
