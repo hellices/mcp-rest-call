@@ -3,18 +3,16 @@ name: Gradle Build and Publish
 on:
   push:
     branches: [ "main" ]
-    # Publish semver tags as releases
-    tags: [ 'v*.*.*' ]
+    tags: [ 'v*.*.*' ]  # 버전 태그 푸시 시 실행
   pull_request:
     branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: mcp-rest-call
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout repository
@@ -42,5 +40,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: application-jar
-          path: mcp-rest-call/build/libs/*.jar
+          path: build/libs/*.jar
           if-no-files-found: error
