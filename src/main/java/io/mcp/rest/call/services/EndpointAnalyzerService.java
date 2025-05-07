@@ -1,17 +1,15 @@
-package io.openapi.serve.services;
+package io.mcp.rest.call.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -112,7 +110,7 @@ public class EndpointAnalyzerService {
 
             // Extract parameters information
             JsonNode parametersNode = methodNode.get("parameters");
-            if (parametersNode != null && parametersNode.isArray() && parametersNode.size() > 0) {
+            if (parametersNode != null && parametersNode.isArray() && !parametersNode.isEmpty()) {
                 analysis.append("## Required Parameters\n\n");
 
                 // Group parameters by type for better organization
@@ -158,7 +156,7 @@ public class EndpointAnalyzerService {
                 analysis.append("## Request Body\n\n");
                 JsonNode requestBodyNode = methodNode.get("requestBody");
 
-                boolean required = requestBodyNode.has("required") ? requestBodyNode.get("required").asBoolean() : false;
+                boolean required = requestBodyNode.has("required") && requestBodyNode.get("required").asBoolean();
                 analysis.append("Required: ").append(required ? "Yes" : "No").append("\n\n");
 
                 if (requestBodyNode.has("description")) {
@@ -522,7 +520,7 @@ public class EndpointAnalyzerService {
                 }
             }
         } else if (schemaNode.has("$ref")) {
-            return schemaNode.get("$ref").asText().replaceAll(".*\\/", "");
+            return schemaNode.get("$ref").asText().replaceAll(".*/", "");
         } else {
             return "unknown";
         }

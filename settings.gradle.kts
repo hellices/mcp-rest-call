@@ -1,1 +1,1 @@
-rootProject.name = "mcp-weather-starter-webflux-server"
+rootProject.name = "mcp-rest-call"

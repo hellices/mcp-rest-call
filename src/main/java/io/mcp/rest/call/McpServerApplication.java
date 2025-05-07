@@ -1,4 +1,4 @@
-package io.openapi.serve;
+package io.mcp.rest.call;
 
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
@@ -6,9 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import io.openapi.serve.services.HttpRequestService;
-import io.openapi.serve.services.OpenApiSpecificationService;
-import io.openapi.serve.services.EndpointAnalyzerService;
+import io.mcp.rest.call.services.HttpRequestService;
+import io.mcp.rest.call.services.OpenApiSpecificationService;
+import io.mcp.rest.call.services.EndpointAnalyzerService;
 
 /**
  * Main application class for the OpenAPI server

@@ -127,7 +127,7 @@ The project is built and published as a JAR artifact through GitHub Actions. You
 To run the JAR:
 
 ```bash
-java -jar build/libs/mcp-weather-starter-webflux-server-0.0.1-SNAPSHOT.jar
+java -jar build/libs/mcp-rest-call-0.0.1-SNAPSHOT.jar
 ```
 
 ### Building Locally
@@ -148,10 +148,10 @@ The project is now built and published as a Docker image to GitHub Container Reg
 
 ```bash
 # Pull the Docker image from GHCR
-docker pull ghcr.io/spring-projects/spring-ai-examples/mcp-weather-starter-webflux-server:latest
+docker pull ghcr.io/hellices/mcp-rest-call:latest
 
 # Run the Docker container
-docker run -p 8080:8080 ghcr.io/spring-projects/spring-ai-examples/mcp-weather-starter-webflux-server:latest
+docker run -p 8080:8080 ghcr.io/hellices/mcp-rest-call:latest
 ```
 
 #### Building locally
@@ -163,10 +163,10 @@ You can also build the Docker image locally:
 ./gradlew build
 
 # Build the Docker image
-docker build -t mcp-weather-starter-webflux-server .
+docker build -t mcp-rest-call .
 
 # Run the Docker container
-docker run -p 8080:8080 mcp-weather-starter-webflux-server
+docker run -p 8080:8080 mcp-rest-call
 ```
 
 ## Additional Resources
