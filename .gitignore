@@ -1,9 +1,12 @@
 # === Gradle ===
 .gradle/
 build/
-!gradle/wrapper/gradle-wrapper.jar
 .gradle-cache/
 .gradle-local/
+
+# Include Gradle Wrapper JAR and properties
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
 
 # === IntelliJ IDEA ===
 *.iml
