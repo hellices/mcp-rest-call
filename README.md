@@ -1,7 +1,13 @@
 # Spring AI MCP OpenAPI Server Sample
 
-[![Gradle Build and Publish](https://github.com/spring-projects/spring-ai-examples/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/spring-projects/spring-ai-examples/actions/workflows/gradle-build.yml)
-[![GitHub Actions Artifacts](https://img.shields.io/badge/GitHub%20Actions-Artifacts-blue?logo=github)](https://github.com/spring-projects/spring-ai-examples/actions)
+# mcp-rest-call
+
+[![Build](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/hellices/mcp-rest-call/actions/workflows/build-and-publish.yml)
+[![GitHub Actions Artifacts](https://img.shields.io/badge/GitHub%20Actions-Artifacts-blue?logo=github)](https://github.com/hellices/mcp-rest-call/actions)
+[![Java](https://img.shields.io/badge/Java-21-blue.svg?logo=java)](https://openjdk.org/projects/jdk/21/)
+[![Gradle](https://img.shields.io/badge/Gradle-8.7-blue?logo=gradle)](https://gradle.org/)
+[![Docker](https://img.shields.io/badge/built%20with-Docker-blue?logo=docker)](https://hub.docker.com/)
+[![License](https://img.shields.io/github/license/hellices/mcp-rest-call)](./LICENSE)
 
 This project is a Spring AI Model Context Protocol (MCP) server that provides tools for working with OpenAPI specifications. It enables AI models to interact with REST APIs by providing the following capabilities:
 
